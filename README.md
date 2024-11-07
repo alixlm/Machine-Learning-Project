@@ -23,9 +23,9 @@ La colonne ID de X_train et Y_train est identique, et de même pour les données
 
 __X_train.csv : Données d'entrée d'entraînement__
 __X_test.csv : Données d'entrée de test__
-35 colonnes
-ID : Identifiant d'indexe unique, associé à un jour (DAY_ID) et un pays (COUNTRY),
-DAY_ID : Identifiant du jour - les dates ont été annonymisées en préservant la structure des données,
+_ 35 colonnes
+_ ID : Identifiant d'indexe unique, associé à un jour (DAY_ID) et un pays (COUNTRY),
+_ DAY_ID : Identifiant du jour - les dates ont été annonymisées en préservant la structure des données,
 COUNTRY : Identifiant du pays - DE = Allemagne, FR = France,
 GAS_RET : Gaz en Europe,
 COAL_RET : Charbon en Europe,
