@@ -1,56 +1,56 @@
-# Projet Machine Learning : Explication du prix de l'électricité
+# ⚡ Machine Learning Project: Electricity Price Explanation ⚙️📉
 
-Ce projet de groupe a pour objectif d'expliquer le prix de l'électricité à partir de données météorologiques, énergétiques et commerciales pour deux pays européens, la France et l'Allemagne. Le but est d'expliquer la variation journalière des prix de contrats à terme sur l'électricité (futures), en fonction de différentes variables explicatives telles que la température, la consommation d'électricité, les prix des matières premières, etc.
+This group project aims to explain electricity prices based on meteorological, energy, and commercial data for two European countries: France 🇫🇷 and Germany 🇩🇪. The goal is to explain daily variations in electricity futures prices using variables such as temperature 🌡️, electricity consumption ⚡, commodity prices ⛽, and more.
 
-## Contexte
+## 🌍 Context
 
-Une multitude de facteurs influencent le prix de l'electricité au quotidien. Des variations locales du climat pourront à la fois affecter la production et la demande électrique par exemple. Des phénomènes à plus long terme, comme le réchauffement climatique, auront également un impact évident. Des évènements géopolitiques, comme la guerre en Ukraine, peuvent en parallèle faire bouger le prix des matières premières qui sont clefs dans la production d'électricité, sachant que chaque pays s'appuie sur un mix énergétique qui lui est propre (nucléaire, solaire, hydrolique, gaz, charbon, etc). De plus chaque pays peut importer/exporter de l'électricité avec ses voisins au travers de marchés dynamiques, comme en Europe. Ces différents élements rendent assez complexe la modélisation du prix de l'électricité par pays.
+Electricity prices are influenced by numerous factors on a daily basis. For instance, local climate variations can affect both electricity demand and supply 🌧️🌬️. In the long run, phenomena like climate change 🌡️ have a lasting impact on prices. Geopolitical events, such as the war in Ukraine 🇺🇦, can also influence commodity costs, with each country relying on its unique energy mix (nuclear ⚛️, solar ☀️, hydro 💧, natural gas ⛽, coal 🪨, etc.).
 
-Le modèle doit expliquer la variation du prix de l'électricité à partir de ces données en utilisant un modèle de machine learning, en optimisant les performances avec la corrélation de Spearman.
+Additionally, each country can import or export electricity through dynamic markets, especially in Europe 🇪🇺. These diverse factors make it challenging to model electricity prices for each country.
 
-## Objectifs
+Our model uses a machine learning algorithm to explain price variations based on these data points, optimizing performance with Spearman correlation 📈.
 
-le but est de construire un modèle qui, à partir de ces variables explicatives, renvoie une bonne estimation de la variation journalière du prix de contrats à terme (dits futures) sur l'électricité, en France ou en Allemagne. Ces contrats permettent d'acheter (ou de vendre) une quantité donnée d'électricité à un prix fixé par le contrat et qui sera livrée à une date future spécifiée (maturité du contrat). Les futures sont donc des instruments financiers qui donnent une estimation de la valeur de l'électricité au moment de la maturité du contrat à partir des conditions actuelles du marché - ici, on se restreint à des futures à courte maturité (24h).
+## 🎯 Objectives
 
-## Evaluation
+The objective is to build a model capable of providing an accurate estimate of daily changes in electricity futures prices in France and Germany. Futures contracts allow for the purchase or sale of a set amount of electricity at a fixed price, to be delivered at a future date. This project focuses on short-term futures (24h maturity) to estimate electricity prices based on current market conditions.
 
-La fonction de score (métrique) utilisée est la corrélation de Spearman entre la réponse du participant et les variations réelles du prix des futures contenues dans le jeu de données de test.
+## 📊 Evaluation
 
-## Data
+The model’s performance is measured by the Spearman correlation between the model’s predictions and the actual variations in futures prices in the test dataset ✅.
 
-Les données d'entrée X_train et X_test représentent les même variables explicatives mais sur deux périodes de temps différentes.
-La colonne ID de X_train et Y_train est identique, et de même pour les données test. Les données d'entrainement fournissent 1494 lignes, et les données de test en contiennent 654.
+## 📁 Data
 
-__X_train.csv : Données d'entrée d'entraînement__
-__X_test.csv : Données d'entrée de test__
-- 35 colonnes
-- ID : Identifiant d'indexe unique, associé à un jour (DAY_ID) et un pays (COUNTRY),
-- DAY_ID : Identifiant du jour - les dates ont été annonymisées en préservant la structure des données,
-- COUNTRY : Identifiant du pays - DE = Allemagne, FR = France,
-- GAS_RET : Gaz en Europe,
-- COAL_RET : Charbon en Europe,
-- CARBON_RET : Futures sur les emissions carbone,
+The data is organized into two sets: `X_train` and `X_test`, containing the same explanatory variables over different time periods.
 
-Mesures météorologiques, de productions d'energie et de mesures d'utilisation électrique  (journalières, dans le pays x) :
+### Files and Columns
 
-- x_TEMP : Temperature,
-- x_RAIN : Pluie,
-- x_WIND : Vent,
-- x_GAS : Gaz naturel,
-- x_COAL : Charbon,
-- x_HYDRO : Hydrolique,
-- x_NUCLEAR : Nucléaire,
-- x_SOLAR : Photovoltaïque,
-- x_WINDPOW : Eolienne,
-- x_LIGNITE : Lignite,
-- x_CONSUMPTON : Electricité totale consommée,
-- x_RESIDUAL_LOAD : Electricité consommée après utilisation des énergies renouvelables,
-- x_NET_IMPORT: Electricité importée depuis l'Europe,
-- x_NET_EXPORT: Electricité exportée vers l'Europe,
-- DE_FR_EXCHANGE: Electricité échangée entre Allemagne et France,
-- FR_DE_EXCHANGE: Electricité échangée entre France et Allemagne.
+- **X_train.csv**: Training input data
+- **X_test.csv**: Test input data
+  - **35 columns**
+  - `ID`: Unique identifier (index), associated with a day (`DAY_ID`) and a country (`COUNTRY`)
+  - `DAY_ID`: Day identifier (dates have been anonymized)
+  - `COUNTRY`: Country identifier (`DE` = Germany 🇩🇪, `FR` = France 🇫🇷)
+  - `GAS_RET`, `COAL_RET`, `CARBON_RET`: Futures prices for natural gas, coal, and carbon emissions in Europe
 
-__Y_train.csv : Données de sortie d'entrainement__
-- 2 colonnes
-- ID : Identifiant unique - le même que celui des données d'entrée,
-- TARGET : Variation journalière du prix de futures d'électricité (maturité 24h).
+  **Weather, energy production, and consumption variables** (daily values per country):
+  - `x_TEMP`: Temperature 🌡️
+  - `x_RAIN`: Rain 🌧️
+  - `x_WIND`: Wind 🌬️
+  - `x_GAS`: Natural gas ⛽
+  - `x_COAL`: Coal 🪨
+  - `x_HYDRO`: Hydroelectric power 💧
+  - `x_NUCLEAR`: Nuclear ⚛️
+  - `x_SOLAR`: Solar power ☀️
+  - `x_WINDPOW`: Wind power 🌪️
+  - `x_LIGNITE`: Lignite 🔥
+  - `x_CONSUMPTION`: Total electricity consumption ⚡
+  - `x_RESIDUAL_LOAD`: Electricity consumed after renewable energy usage 🌱
+  - `x_NET_IMPORT`: Electricity imported from Europe 🇪🇺
+  - `x_NET_EXPORT`: Electricity exported to Europe 🌍
+  - `DE_FR_EXCHANGE`: Electricity flow from Germany to France 🇩🇪➡️🇫🇷
+  - `FR_DE_EXCHANGE`: Electricity flow from France to Germany 🇫🇷➡️🇩🇪
+
+- **Y_train.csv**: Training output data
+  - **2 columns**
+  - `ID`: Unique identifier (same as input data)
+  - `TARGET`: Daily variation in electricity futures price (24h maturity) 💹
