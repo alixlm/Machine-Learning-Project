@@ -23,34 +23,34 @@ La colonne ID de X_train et Y_train est identique, et de même pour les données
 
 __X_train.csv : Données d'entrée d'entraînement__
 __X_test.csv : Données d'entrée de test__
-_ 35 colonnes
-_ ID : Identifiant d'indexe unique, associé à un jour (DAY_ID) et un pays (COUNTRY),
-_ DAY_ID : Identifiant du jour - les dates ont été annonymisées en préservant la structure des données,
-COUNTRY : Identifiant du pays - DE = Allemagne, FR = France,
-GAS_RET : Gaz en Europe,
-COAL_RET : Charbon en Europe,
-CARBON_RET : Futures sur les emissions carbone,
+- 35 colonnes
+- ID : Identifiant d'indexe unique, associé à un jour (DAY_ID) et un pays (COUNTRY),
+- DAY_ID : Identifiant du jour - les dates ont été annonymisées en préservant la structure des données,
+- COUNTRY : Identifiant du pays - DE = Allemagne, FR = France,
+- GAS_RET : Gaz en Europe,
+- COAL_RET : Charbon en Europe,
+- CARBON_RET : Futures sur les emissions carbone,
 
-mesures météorologiques, de productions d'energie et de mesures d'utilisation électrique  (journalières, dans le pays x) :
+Mesures météorologiques, de productions d'energie et de mesures d'utilisation électrique  (journalières, dans le pays x) :
 
-x_TEMP : Temperature,
-x_RAIN : Pluie,
-x_WIND : Vent,
-x_GAS : Gaz naturel,
-x_COAL : Charbon,
-x_HYDRO : Hydrolique,
-x_NUCLEAR : Nucléaire,
-x_SOLAR : Photovoltaïque,
-x_WINDPOW : Eolienne,
-x_LIGNITE : Lignite,
-x_CONSUMPTON : Electricité totale consommée,
-x_RESIDUAL_LOAD : Electricité consommée après utilisation des énergies renouvelables,
-x_NET_IMPORT: Electricité importée depuis l'Europe,
-x_NET_EXPORT: Electricité exportée vers l'Europe,
-DE_FR_EXCHANGE: Electricité échangée entre Allemagne et France,
-FR_DE_EXCHANGE: Electricité échangée entre France et Allemagne.
+- x_TEMP : Temperature,
+- x_RAIN : Pluie,
+- x_WIND : Vent,
+- x_GAS : Gaz naturel,
+- x_COAL : Charbon,
+- x_HYDRO : Hydrolique,
+- x_NUCLEAR : Nucléaire,
+- x_SOLAR : Photovoltaïque,
+- x_WINDPOW : Eolienne,
+- x_LIGNITE : Lignite,
+- x_CONSUMPTON : Electricité totale consommée,
+- x_RESIDUAL_LOAD : Electricité consommée après utilisation des énergies renouvelables,
+- x_NET_IMPORT: Electricité importée depuis l'Europe,
+- x_NET_EXPORT: Electricité exportée vers l'Europe,
+- DE_FR_EXCHANGE: Electricité échangée entre Allemagne et France,
+- FR_DE_EXCHANGE: Electricité échangée entre France et Allemagne.
 
 __Y_train.csv : Données de sortie d'entrainement__
-2 colonnes
-ID : Identifiant unique - le même que celui des données d'entrée,
-TARGET : Variation journalière du prix de futures d'électricité (maturité 24h).
+- 2 colonnes
+- ID : Identifiant unique - le même que celui des données d'entrée,
+- TARGET : Variation journalière du prix de futures d'électricité (maturité 24h).
