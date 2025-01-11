@@ -1,7 +1,5 @@
 # ⚡ Machine Learning Project: Electricity Price Explanation ⚙️📉
 
-# This project is under development
-
 This group project aims to explain electricity prices based on meteorological, energy, and commercial data for two European countries: France 🇫🇷 and Germany 🇩🇪. The goal is to explain daily variations in electricity futures prices using variables such as temperature 🌡️, electricity consumption ⚡, commodity prices ⛽, and more.
 
 ## 🌍 Context
